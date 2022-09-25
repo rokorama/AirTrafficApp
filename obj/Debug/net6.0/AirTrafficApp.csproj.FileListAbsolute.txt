@@ -1,0 +1,15 @@
+/Users/crisc/csharp/AirTrafficApp/bin/Debug/net6.0/AirTrafficApp
+/Users/crisc/csharp/AirTrafficApp/bin/Debug/net6.0/AirTrafficApp.deps.json
+/Users/crisc/csharp/AirTrafficApp/bin/Debug/net6.0/AirTrafficApp.runtimeconfig.json
+/Users/crisc/csharp/AirTrafficApp/bin/Debug/net6.0/AirTrafficApp.dll
+/Users/crisc/csharp/AirTrafficApp/bin/Debug/net6.0/AirTrafficApp.pdb
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.csproj.AssemblyReference.cache
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.AssemblyInfoInputs.cache
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.AssemblyInfo.cs
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.csproj.CoreCompileInputs.cache
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.dll
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/refint/AirTrafficApp.dll
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.pdb
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/AirTrafficApp.genruntimeconfig.cache
+/Users/crisc/csharp/AirTrafficApp/obj/Debug/net6.0/ref/AirTrafficApp.dll
