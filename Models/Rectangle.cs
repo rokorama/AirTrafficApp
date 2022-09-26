@@ -3,8 +3,6 @@ public class Rectangle : IShape
     public Point TopLeft { get; set; } = new();
     public Point BottomRight { get; set; } = new();
 
-
-
     public Rectangle(Point point1, Point point2)
     {
             TopLeft.X = point1.X;

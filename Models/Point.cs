@@ -10,9 +10,7 @@ public class Point
     }
 
     public Point()
-    {
-        
-    }
+    { }
 
     public override string ToString()
     {

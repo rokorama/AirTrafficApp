@@ -1,11 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
+
 internal class Program
 {
     private static void Main(string[] args)
     {
-        var map = new Map();
-        map.Zones = InputParser.ReadMap("/Users/crisc/csharp/AirTrafficApp/SampleMap.map");
+        var map = new Map("/Users/crisc/csharp/AirTrafficApp/SampleMap.map");
 
         var flightFeed = new List<string>()
         {
@@ -37,7 +38,12 @@ internal class Program
 
         foreach (var entry in flightFeed)
         {
+            var stopwatch = Stopwatch.StartNew();
+            
             map.UpdateMap(entry);
+
+            stopwatch.Stop();
+            Console.WriteLine(stopwatch.ElapsedTicks);
         }
 
         // while (true)
