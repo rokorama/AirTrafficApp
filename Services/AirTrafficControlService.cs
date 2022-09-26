@@ -1,11 +1,11 @@
 using Microsoft.Extensions.Hosting;
 
-public class RadarService : IHostedService
+public class AirTrafficControlService : IHostedService
 {
     private Map? _map;
     private readonly IHostApplicationLifetime _hostApplicationLifetime;
 
-    public RadarService(IHostApplicationLifetime hostApplicationLifetime)
+    public AirTrafficControlService(IHostApplicationLifetime hostApplicationLifetime)
     {
         _hostApplicationLifetime = hostApplicationLifetime;
     }
