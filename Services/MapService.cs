@@ -12,7 +12,7 @@ public static class MapService
             }
             catch (ArgumentException)
             {
-                throw new InvalidDataException($"Invalid input at line {i+1} (\"{lines[i]}\". Aborting operation and please doublecheck input.");
+                throw new InvalidDataException(lines[i]);
             }
         }
         return resultList;
@@ -36,7 +36,7 @@ public static class MapService
     {
         try
         {
-            UpdateFlightsData(map, input);
+            UpdateTrackedFlights(map, input);
             if (map.TrackedFlights is not null)
                 Parallel.ForEach(map.TrackedFlights, flight => flight.UpdateFlight(map.Zones));
         }
@@ -46,7 +46,7 @@ public static class MapService
         }
     }
 
-    public static void UpdateFlightsData(Map map, string input)
+    public static void UpdateTrackedFlights(Map map, string input)
     {
         var tasks = new List<Task>();
 

@@ -6,6 +6,13 @@ public class Map
     public Map(string filepath)
     {
         var rawLines = FileReaderService.ReadMapFile(filepath);
-        Zones = MapService.ReadMap(rawLines);
+        try
+        {
+            Zones = MapService.ReadMap(rawLines);
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException(ex.Message);
+        }
     }
 }
