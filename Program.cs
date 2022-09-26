@@ -1,56 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Diagnostics;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var map = new Map("/Users/crisc/csharp/AirTrafficApp/SampleMap.map");
+        var host = Host.CreateDefaultBuilder(args)
+                       .ConfigureServices(services => { services.AddTransient<RadarService>(); })
+                       .Build();
 
-        var flightFeed = new List<string>()
-        {
-            "FR664(10,10) GB3265(4,9) NO5521(3,3)",
-            "FR664(10,11) GB3265(4,9) NO5521(3,3)",
-            "FR664(10,10) GB3265(4,9) NO5521(3,3)",
-            "AE331(5,-1) GB3265(4,10) NO5521(4,4)",
-            "AE331(5,0) GB3265(4,11) NO5521(5,5)",
-            "AE331(5,1) GB3265(3,10)",
-            "AE331(5,2) GB3265(3,9)",
-            "AE331(5,3) GB3265(4,8)",
-            "AE331(5,4) GB3265(4,7)",
-            "AE331(5,5) GB3265(5,7)"
-        };
-
-        // var flightFeed = new List<string>()
-        // {
-        //     "FR664(10,10)",
-        //     "FR664(10,11)",
-        //     "FR664(10,10)",
-        // };
-
-        // var flightFeed = new List<string>()
-        // {
-        //     "FR664(10,10) GB3265(4,9) NO5521(3,3)",
-        //     "FR664(10,11) GB3265(4,9) NO5521(3,3)",
-        //     "FR664(10,10) GB3265(4,9) NO5521(3,3)"
-        // };
-
-        foreach (var entry in flightFeed)
-        {
-            var stopwatch = Stopwatch.StartNew();
-            
-            map.UpdateMap(entry);
-
-            stopwatch.Stop();
-            Console.WriteLine(stopwatch.ElapsedTicks);
-        }
-
-        // while (true)
-        // {
-        //     var input = Console.ReadLine();
-        //     map.UpdateMap(input!);
-
-        // }
+        var radar = host.Services.GetRequiredService<RadarService>();
+        radar.StartApplication();
+        radar.ProcessInput();
     }
 }

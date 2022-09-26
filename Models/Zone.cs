@@ -14,16 +14,20 @@ public class Zone
         {
             var topLeftPoint = InputParser.ParseCoordinateString(args[3]);
             var bottomRightPoint = InputParser.ParseCoordinateString(args[4]);
+            if (topLeftPoint == null || bottomRightPoint == null)
+                throw new ArgumentException($"The following coordinates could not be parsed: {shapeName}");
             Shape = new Rectangle(topLeftPoint, bottomRightPoint);
         }
         else if (shapeName == "circle")
         {
             var centerPoint = InputParser.ParseCoordinateString(args[3]);
             var radius = int.Parse(args[4]);
+            if (centerPoint == null)
+                throw new ArgumentException($"The following coordinates could not be parsed: {shapeName}");
             Shape = new Circle(centerPoint, radius);
         }
         else
-            throw new ArgumentException($"The shape name was not recognized: {shapeName}");
+            throw new ArgumentException($"The following shape name was not recognized: {shapeName}");
     }
 
     public bool Contains(Point point)
